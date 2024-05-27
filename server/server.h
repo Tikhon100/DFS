@@ -34,6 +34,7 @@ private:
     std::vector<myDir> getDirectoryContents(char path[256]);
     int listenSocket;
     const std::string key = "mysecretkey123456789012345678901";
+    QString getLocalIP();
 
 public slots:
     void startServerThread();

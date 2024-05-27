@@ -3,6 +3,10 @@
 #include "srlibrary.h"
 #include <QFileDialog>
 #include <iostream>
+#include <sys/types.h>
+#include <ifaddrs.h>
+#include <net/if.h>
+#include <netdb.h>
 server::server(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::server)
@@ -13,6 +17,8 @@ server::server(QWidget *parent)
     this->ui->textEdit->setReadOnly(true);  // Установка режима только для чтения
     this->ui->ipLine->setText("0.0.0.0");
     this->ui->portLine->setText("42100");
+    this->ui->localIpLine->setReadOnly(true);
+    this->ui->localIpLine->setText(this->getLocalIP());
 }
 
 server::~server()
@@ -267,4 +273,37 @@ void server::abortServer(){
     this->ui->serverInfoLabel->setText("") ;
     this->ui->textEdit->clear();
     this->createFlag = 0;
+}
+
+QString server::getLocalIP(){
+    struct ifaddrs *ifAddrStruct = nullptr;
+    struct ifaddrs *ifa = nullptr;
+
+    if (getifaddrs(&ifAddrStruct) == -1)
+    {
+        std::cerr << "Error getting interface addresses" << std::endl;
+        return "";
+    }
+
+    char host[NI_MAXHOST];
+
+    for (ifa = ifAddrStruct; ifa != nullptr; ifa = ifa->ifa_next)
+    {
+        if (ifa->ifa_addr == nullptr)
+        {
+            continue;
+        }
+
+        if (ifa->ifa_addr->sa_family == AF_INET && ifa->ifa_flags & IFF_RUNNING && !(ifa->ifa_flags & IFF_LOOPBACK))
+        {
+            if (getnameinfo(ifa->ifa_addr, sizeof(struct sockaddr_in), host, NI_MAXHOST, nullptr, 0, NI_NUMERICHOST) == 0)
+            {
+                freeifaddrs(ifAddrStruct);
+                return host;
+            }
+        }
+    }
+
+    freeifaddrs(ifAddrStruct);
+    return "";
 }

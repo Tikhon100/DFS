@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>548</width>
-    <height>435</height>
+    <width>493</width>
+    <height>426</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,10 +30,10 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>190</y>
-      <width>321</width>
-      <height>51</height>
+      <x>60</x>
+      <y>220</y>
+      <width>411</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -43,46 +43,20 @@
    <widget class="QLabel" name="serverInfoLabel">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>130</y>
-      <width>251</width>
-      <height>61</height>
+      <x>60</x>
+      <y>180</y>
+      <width>411</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>50</y>
-      <width>41</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Порт:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>10</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>ip сервера:</string>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="portLine">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>130</x>
       <y>50</y>
       <width>131</width>
       <height>31</height>
@@ -92,7 +66,7 @@
    <widget class="QLineEdit" name="ipLine">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>130</x>
       <y>10</y>
       <width>131</width>
       <height>31</height>
@@ -104,7 +78,7 @@
      <rect>
       <x>20</x>
       <y>260</y>
-      <width>511</width>
+      <width>451</width>
       <height>111</height>
      </rect>
     </property>
@@ -112,7 +86,7 @@
    <widget class="QLineEdit" name="portLine_2">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>130</x>
       <y>90</y>
       <width>131</width>
       <height>31</height>
@@ -122,14 +96,14 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>80</y>
+      <x>20</x>
+      <y>90</y>
       <width>91</width>
-      <height>41</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Точка входа в хранилище</string>
+     <string>Точка входа в хранилище:</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -164,13 +138,80 @@
      <string>Отключить сервер</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>130</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>IP в сети:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Порт:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>IP-адрес сервера:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="localIpLine">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>130</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>548</width>
+     <width>493</width>
      <height>20</height>
     </rect>
    </property>
